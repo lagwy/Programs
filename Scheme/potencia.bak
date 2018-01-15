@@ -1,0 +1,6 @@
+#lang racket
+; eleva una base a una potencia entera positiva
+(define (a^b a b)
+  (if (zero? b)
+      1
+      (* a (a^b a (- b 1)))))

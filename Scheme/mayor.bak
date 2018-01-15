@@ -1,0 +1,9 @@
+#lang racket
+(define (mayor lista)
+  (cond
+    ((= (length lista ) 0) "Lista vacia")
+    ((= (length lista) 1) (car lista))
+    (else (max (car lista) (mayor (cdr lista))))
+  )
+)
+

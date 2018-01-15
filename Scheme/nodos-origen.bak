@@ -1,0 +1,19 @@
+#lang racket
+; Funcion que muestra los nodos origen de un nodo
+(define (nodos-origen grado nodo)
+  (if (null? grado) '()
+      (if (esta? nodo (conectados grafo))
+          (cons (caar grafo) (nodos-origen (cdr grafo) nodo))
+          (nodos-origen (cdr grafo) nodo))))
+
+; Funcion que comprueba que un nodo esta en el grafo
+(define (esta? nodo grafo)
+  ; Cuando no se encuentra en el grafo porque se llego a vaciar
+  (if (null? grafo) #f
+      ; Revisar si es el primer valor del grafo
+      (if (equal? nodo (car grafo)) #t
+          ; Revisar si esta en el resto del grafo
+          (esta? nodo (cdr grafo)))))
+
+; Funcion que revisa las conexiones que tiene el grafo
+(define (conectados grafo)(nodos-destino grafo (caar grafo)))

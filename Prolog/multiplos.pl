@@ -1,0 +1,1 @@
+multiplos(N,M,R) :- R is M/N.

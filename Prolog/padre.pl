@@ -1,0 +1,1 @@
+padre(emilia,luis).

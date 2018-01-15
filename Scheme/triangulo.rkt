@@ -1,0 +1,11 @@
+#lang racket
+(define (triangulo l1 l2 l3)
+  (cond ((not (triang? l1 l2 l3))
+         (quote no-triangulo))
+        ((= l1 l2 l3) 'equilatero)
+        ((or (= l1 l2)(= l1 l3)(= l2 l3)) 'isoseles)
+        (else 'escaleno)))
+(define (triang? l1 l2 l3)
+  (and (< l1 (+ l2 l3))
+       (< l2 (+ l1 l3))
+       (< l3 (+ l1 l2))))
